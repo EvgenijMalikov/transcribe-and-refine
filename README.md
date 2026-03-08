@@ -37,7 +37,7 @@ If `OPENAI_API_KEY` is not configured, the app starts, but processing remains li
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/EvgenijMalikov/transcribe-and-refine.git
 cd transcribe-and-refine
 ```
 
