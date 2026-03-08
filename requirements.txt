@@ -1,0 +1,5 @@
+Flask==3.0.0
+vosk==0.3.45
+openai==1.55.3
+python-dotenv==1.0.0
+Werkzeug==3.0.1

@@ -1,0 +1,119 @@
+{
+  "meta": {
+    "title": "Transcribe and Refine"
+  },
+  "hero": {
+    "eyebrow": "Локальный speech-to-text workflow",
+    "title": "Transcribe and Refine: локальная транскрибация и очистка текста",
+    "subtitle": "Transcribe and Refine выполняет распознавание речи на вашей машине через Vosk или Whisper, а при необходимости отправляет транскрипт в OpenAI для очистки. Язык интерфейса и язык аудио настраиваются отдельно.",
+    "localBadge": "Локальное распознавание",
+    "cloudBadge": "Облачная очистка"
+  },
+  "status": {
+    "title": "Статус среды",
+    "description": "Здесь показано, какие части пайплайна Transcribe and Refine доступны до запуска обработки.",
+    "loading": "Проверка возможностей приложения...",
+    "localLabel": "Speech-to-text",
+    "cloudLabel": "Очистка транскрипта",
+    "whisperLabel": "Движок Whisper"
+  },
+  "workflow": {
+    "title": "Как это работает",
+    "description": "Transcribe and Refine сочетает локальное распознавание речи и опциональную облачную постобработку.",
+    "step1": "Загрузите один или несколько аудиофайлов в поддерживаемом формате.",
+    "step2": "Выбранный локальный движок распознаёт аудио на этой машине.",
+    "step3": "Транскрипт при необходимости очищается через OpenAI: убираются артефакты и очевидный шум распознавания.",
+    "step4": "На выходе можно скачать и сырой транскрипт, и очищенную версию."
+  },
+  "settings": {
+    "title": "Параметры обработки",
+    "description": "Выберите, как Transcribe and Refine должен обрабатывать ваши файлы. Язык интерфейса доступен в меню справа сверху.",
+    "uiLanguage": "Язык интерфейса",
+    "engine": "Движок распознавания",
+    "audioLanguage": "Язык аудио"
+  },
+  "engines": {
+    "vosk": {
+      "title": "Vosk",
+      "description": "Быстрое локальное распознавание с офлайн-моделями для конкретных языков."
+    },
+    "whisper": {
+      "title": "Whisper",
+      "description": "Более качественное локальное распознавание, обычно медленнее Vosk."
+    }
+  },
+  "languages": {
+    "en": "Английский",
+    "ru": "Русский",
+    "es": "Испанский",
+    "fr": "Французский",
+    "de": "Немецкий",
+    "zh": "Китайский"
+  },
+  "upload": {
+    "title": "Загрузка аудиофайлов",
+    "description": "В Transcribe and Refine файлы обрабатываются по одному, а результаты появляются сразу после завершения каждого файла.",
+    "limitBadge": "До {maxSizeMb} МБ на запрос",
+    "dropzoneTitle": "Перетащите аудиофайлы сюда или нажмите для выбора",
+    "hint": "Поддерживаемые форматы: {extensions}. Максимальный размер запроса: {maxSizeMb} МБ."
+  },
+  "actions": {
+    "process": "Обработать файлы",
+    "removeFile": "Удалить",
+    "clearHistory": "Очистить историю",
+    "confirmClearHistory": "Очистить сохранённую историю обработки?"
+  },
+  "progress": {
+    "idleTitle": "Ожидание файлов",
+    "idleDescription": "Выберите файлы и запустите обработку, когда будете готовы.",
+    "processingSingle": "Обрабатывается {count} файл...",
+    "processingMultiple": "Обрабатывается {count} файлов...",
+    "details": "Обработано {processedCount} из {totalFiles} файлов • Движок: {engine} • Язык аудио: {language}"
+  },
+  "history": {
+    "title": "Последние результаты",
+    "description": "Завершённые задания Transcribe and Refine сохраняются в истории браузера для быстрого доступа.",
+    "justNow": "только что",
+    "processedAt": "Обработано",
+    "engine": "Движок",
+    "audioLanguage": "Язык аудио",
+    "success": "Обработано успешно",
+    "errorLabel": "Ошибка обработки",
+    "downloadTranscript": "Скачать транскрипт",
+    "downloadRefined": "Скачать очищенный текст"
+  },
+  "errors": {
+    "generic": "Во время обработки запроса произошла ошибка.",
+    "connection": "Не удалось подключиться к серверу. Убедитесь, что приложение запущено на http://localhost:5000.",
+    "invalid_engine": "Неподдерживаемый движок: {engine}.",
+    "invalid_audio_language": "Неподдерживаемый язык аудио: {language}.",
+    "whisper_unavailable": "Whisper не установлен на этой машине.",
+    "openai_not_configured": "OpenAI не настроен. Добавьте OPENAI_API_KEY в файл .env.",
+    "unsupported_format": "Неподдерживаемый формат файла ({extension}). Разрешены: {allowed_extensions}.",
+    "transcription_failed": "Не удалось распознать речь в этом файле.",
+    "file_too_large": "Файл слишком большой. Максимальный размер: {max_size_mb} МБ.",
+    "file_not_found": "Запрошенный файл не найден.",
+    "invalid_download_path": "Недопустимый путь к файлу.",
+    "download_failed": "Не удалось скачать файл.",
+    "no_files_uploaded": "Файлы не были загружены.",
+    "no_files_selected": "Файлы не выбраны."
+  },
+  "health": {
+    "badges": {
+      "ok": "Готово",
+      "warning": "Ограничено",
+      "error": "Ошибка"
+    },
+    "loading": "Проверка...",
+    "localReady": "Локально на этой машине",
+    "openaiConfigured": "OpenAI настроен",
+    "openaiMissing": "OpenAI не настроен",
+    "whisperAvailable": "Установлен",
+    "whisperUnavailable": "Не установлен",
+    "summary": {
+      "ready": "Локальное распознавание и облачная очистка текста готовы к работе.",
+      "openaiMissing": "Локальное распознавание доступно, но облачная очистка отключена, пока не настроен OPENAI_API_KEY.",
+      "degraded": "Приложение запущено, но часть возможностей недоступна."
+    }
+  }
+}

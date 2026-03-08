@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transcribe and Refine</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css', v=asset_version) }}">
+</head>
+<body>
+    <div class="page-shell">
+        <main class="app-shell">
+            <section class="hero-card">
+                <div class="hero-header">
+                    <div>
+                        <div class="eyebrow" data-i18n="hero.eyebrow"></div>
+                        <h1 data-i18n="hero.title"></h1>
+                        <p class="subtitle" data-i18n="hero.subtitle"></p>
+                    </div>
+                    <div class="hero-side">
+                        <div class="language-menu" id="uiLanguageMenu">
+                            <button class="language-menu-toggle" id="uiLanguageMenuToggle" type="button" aria-haspopup="true" aria-expanded="false">
+                                <span class="language-menu-current" id="uiLanguageMenuCurrent"></span>
+                                <span class="language-menu-caret">▾</span>
+                            </button>
+                            <div class="language-menu-dropdown" id="uiLanguageMenuDropdown" hidden></div>
+                        </div>
+                        <div class="badge-row">
+                            <span class="pill pill-local" data-i18n="hero.localBadge"></span>
+                            <span class="pill pill-cloud" data-i18n="hero.cloudBadge"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="grid-two">
+                <div class="panel">
+                    <div class="panel-header">
+                        <div>
+                            <h2 class="panel-title" data-i18n="status.title"></h2>
+                            <p class="panel-description" data-i18n="status.description"></p>
+                        </div>
+                        <span class="status-chip" id="healthBadge"></span>
+                    </div>
+                    <p class="status-summary" id="healthSummary" data-i18n="status.loading"></p>
+                    <div class="status-stack">
+                        <div class="status-row">
+                            <span class="status-label" data-i18n="status.localLabel"></span>
+                            <span class="status-value" id="localProcessingStatus"></span>
+                        </div>
+                        <div class="status-row">
+                            <span class="status-label" data-i18n="status.cloudLabel"></span>
+                            <span class="status-value" id="cloudRefinerStatus"></span>
+                        </div>
+                        <div class="status-row">
+                            <span class="status-label" data-i18n="status.whisperLabel"></span>
+                            <span class="status-value" id="whisperStatus"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-header">
+                        <div>
+                            <h2 class="panel-title" data-i18n="workflow.title"></h2>
+                            <p class="panel-description" data-i18n="workflow.description"></p>
+                        </div>
+                    </div>
+                    <ol class="workflow-list">
+                        <li data-i18n="workflow.step1"></li>
+                        <li data-i18n="workflow.step2"></li>
+                        <li data-i18n="workflow.step3"></li>
+                        <li data-i18n="workflow.step4"></li>
+                    </ol>
+                </div>
+            </section>
+
+            <section class="panel">
+                <div class="panel-header">
+                    <div>
+                        <h2 class="panel-title" data-i18n="settings.title"></h2>
+                        <p class="panel-description" data-i18n="settings.description"></p>
+                    </div>
+                </div>
+
+                <div class="settings-grid">
+                    <div class="setting-group">
+                        <div class="setting-label" data-i18n="settings.engine"></div>
+                        <div class="selector-grid" id="engineOptions"></div>
+                    </div>
+
+                    <div class="setting-group full-width">
+                        <div class="setting-label" data-i18n="settings.audioLanguage"></div>
+                        <div class="selector-grid" id="audioLanguageOptions"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel upload-panel">
+                <div class="panel-header">
+                    <div>
+                        <h2 class="panel-title" data-i18n="upload.title"></h2>
+                        <p class="panel-description" data-i18n="upload.description"></p>
+                    </div>
+                    <span class="helper-badge" id="uploadLimitBadge"></span>
+                </div>
+
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">📁</div>
+                    <div class="upload-text" data-i18n="upload.dropzoneTitle"></div>
+                    <div class="upload-hint" id="uploadHintText"></div>
+                    <input type="file" id="fileInput" accept=".mp3,.wav,.ogg,.opus,.oga,.m4a,audio/mp4,audio/x-m4a" multiple>
+                </div>
+
+                <div class="file-list" id="fileList"></div>
+
+                <div class="actions-row">
+                    <button class="btn btn-primary" id="uploadBtn" disabled data-i18n="actions.process"></button>
+                </div>
+            </section>
+
+            <div class="progress" id="progress">
+                <div class="spinner"></div>
+                <div class="progress-text" id="progressText"></div>
+                <div class="progress-details" id="progressDetails"></div>
+            </div>
+
+            <section class="panel results-panel" id="resultsSection" hidden>
+                <div class="panel-header">
+                    <div>
+                        <h2 class="panel-title" data-i18n="history.title"></h2>
+                        <p class="panel-description" data-i18n="history.description"></p>
+                    </div>
+                    <div class="secondary-actions">
+                        <button class="btn btn-secondary btn-danger" id="clearHistoryBtn" data-i18n="actions.clearHistory"></button>
+                    </div>
+                </div>
+                <div class="results" id="results"></div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        window.APP_CONFIG = {{ app_config|tojson }};
+    </script>
+    <script src="{{ url_for('static', filename='js/index.js', v=asset_version) }}"></script>
+</body>
+</html>

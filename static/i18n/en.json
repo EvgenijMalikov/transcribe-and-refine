@@ -1,0 +1,119 @@
+{
+  "meta": {
+    "title": "Transcribe and Refine"
+  },
+  "hero": {
+    "eyebrow": "Local speech-to-text workflow",
+    "title": "Transcribe and Refine your audio locally",
+    "subtitle": "Transcribe and Refine runs speech recognition on your own machine with Vosk or Whisper, then optionally cleans the transcript with OpenAI. Interface language and audio language are configured separately.",
+    "localBadge": "Local transcription",
+    "cloudBadge": "Cloud refinement"
+  },
+  "status": {
+    "title": "Runtime status",
+    "description": "Check which parts of the Transcribe and Refine pipeline are available before you start processing.",
+    "loading": "Checking application capabilities...",
+    "localLabel": "Speech-to-text",
+    "cloudLabel": "Transcript refinement",
+    "whisperLabel": "Whisper engine"
+  },
+  "workflow": {
+    "title": "How it works",
+    "description": "Transcribe and Refine combines local speech recognition with optional cloud cleanup.",
+    "step1": "Upload one or more audio files in a supported format.",
+    "step2": "The selected local engine transcribes the audio on this machine.",
+    "step3": "The transcript is optionally cleaned with OpenAI to remove artifacts and obvious recognition noise.",
+    "step4": "You can download both the raw transcript and the refined version."
+  },
+  "settings": {
+    "title": "Processing settings",
+    "description": "Choose how Transcribe and Refine should process your files. The interface language is available in the top-right menu.",
+    "uiLanguage": "Interface language",
+    "engine": "Transcription engine",
+    "audioLanguage": "Audio language"
+  },
+  "engines": {
+    "vosk": {
+      "title": "Vosk",
+      "description": "Fast local recognition with language-specific offline models."
+    },
+    "whisper": {
+      "title": "Whisper",
+      "description": "Higher quality local recognition, usually slower than Vosk."
+    }
+  },
+  "languages": {
+    "en": "English",
+    "ru": "Russian",
+    "es": "Spanish",
+    "fr": "French",
+    "de": "German",
+    "zh": "Chinese"
+  },
+  "upload": {
+    "title": "Upload audio files",
+    "description": "Files are processed one by one in Transcribe and Refine, and results appear as soon as each file finishes.",
+    "limitBadge": "Up to {maxSizeMb} MB per request",
+    "dropzoneTitle": "Drop audio files here or click to browse",
+    "hint": "Supported formats: {extensions}. Maximum request size: {maxSizeMb} MB."
+  },
+  "actions": {
+    "process": "Process files",
+    "removeFile": "Remove",
+    "clearHistory": "Clear history",
+    "confirmClearHistory": "Clear the saved processing history?"
+  },
+  "progress": {
+    "idleTitle": "Waiting for files",
+    "idleDescription": "Choose files and start processing when you are ready.",
+    "processingSingle": "Processing {count} file...",
+    "processingMultiple": "Processing {count} files...",
+    "details": "Processed {processedCount} of {totalFiles} files • Engine: {engine} • Audio language: {language}"
+  },
+  "history": {
+    "title": "Recent results",
+    "description": "Completed Transcribe and Refine jobs are stored in your browser history for quick access.",
+    "justNow": "just now",
+    "processedAt": "Processed",
+    "engine": "Engine",
+    "audioLanguage": "Audio language",
+    "success": "Processed successfully",
+    "errorLabel": "Processing error",
+    "downloadTranscript": "Download transcript",
+    "downloadRefined": "Download refined text"
+  },
+  "errors": {
+    "generic": "Something went wrong while processing the request.",
+    "connection": "Could not reach the server. Make sure the app is running on http://localhost:5000.",
+    "invalid_engine": "Unsupported engine: {engine}.",
+    "invalid_audio_language": "Unsupported audio language: {language}.",
+    "whisper_unavailable": "Whisper is not installed on this machine.",
+    "openai_not_configured": "OpenAI is not configured. Add OPENAI_API_KEY to your .env file.",
+    "unsupported_format": "Unsupported file format ({extension}). Allowed formats: {allowed_extensions}.",
+    "transcription_failed": "No speech could be transcribed from this file.",
+    "file_too_large": "The file is too large. Maximum size: {max_size_mb} MB.",
+    "file_not_found": "The requested file was not found.",
+    "invalid_download_path": "Invalid file path.",
+    "download_failed": "The file could not be downloaded.",
+    "no_files_uploaded": "No files were uploaded.",
+    "no_files_selected": "No files were selected."
+  },
+  "health": {
+    "badges": {
+      "ok": "Ready",
+      "warning": "Limited",
+      "error": "Error"
+    },
+    "loading": "Checking...",
+    "localReady": "Local on this machine",
+    "openaiConfigured": "OpenAI configured",
+    "openaiMissing": "OpenAI not configured",
+    "whisperAvailable": "Installed",
+    "whisperUnavailable": "Not installed",
+    "summary": {
+      "ready": "Local transcription and cloud refinement are ready to use.",
+      "openaiMissing": "Local transcription is available, but cloud refinement is disabled until OPENAI_API_KEY is configured.",
+      "degraded": "The application is running, but some capabilities are unavailable."
+    }
+  }
+}

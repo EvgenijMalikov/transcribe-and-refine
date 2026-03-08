@@ -1,0 +1,119 @@
+{
+  "meta": {
+    "title": "Transcribe and Refine"
+  },
+  "hero": {
+    "eyebrow": "Workflow local de speech-to-text",
+    "title": "Transcribe and Refine votre audio en local",
+    "subtitle": "Transcribe and Refine exécute la reconnaissance vocale sur votre machine avec Vosk ou Whisper, puis peut nettoyer la transcription via OpenAI si besoin. La langue de l'interface et la langue de l'audio sont configurées séparément.",
+    "localBadge": "Transcription locale",
+    "cloudBadge": "Nettoyage cloud"
+  },
+  "status": {
+    "title": "État de l'environnement",
+    "description": "Ce panneau indique quelles parties du pipeline de Transcribe and Refine sont disponibles avant le lancement du traitement.",
+    "loading": "Vérification des capacités de l'application...",
+    "localLabel": "Speech-to-text",
+    "cloudLabel": "Nettoyage de la transcription",
+    "whisperLabel": "Moteur Whisper"
+  },
+  "workflow": {
+    "title": "Comment cela fonctionne",
+    "description": "Transcribe and Refine combine reconnaissance vocale locale et post-traitement cloud optionnel.",
+    "step1": "Importez un ou plusieurs fichiers audio dans un format pris en charge.",
+    "step2": "Le moteur local sélectionné transcrit l'audio sur cette machine.",
+    "step3": "La transcription peut être nettoyée via OpenAI pour supprimer les artefacts et le bruit évident de reconnaissance.",
+    "step4": "Vous pouvez télécharger à la fois la transcription brute et la version raffinée."
+  },
+  "settings": {
+    "title": "Paramètres de traitement",
+    "description": "Choisissez comment Transcribe and Refine doit traiter vos fichiers. La langue de l'interface est disponible dans le menu en haut à droite.",
+    "uiLanguage": "Langue de l'interface",
+    "engine": "Moteur de transcription",
+    "audioLanguage": "Langue de l'audio"
+  },
+  "engines": {
+    "vosk": {
+      "title": "Vosk",
+      "description": "Reconnaissance locale rapide avec des modèles hors ligne spécifiques à chaque langue."
+    },
+    "whisper": {
+      "title": "Whisper",
+      "description": "Reconnaissance locale de meilleure qualité, généralement plus lente que Vosk."
+    }
+  },
+  "languages": {
+    "en": "Anglais",
+    "ru": "Russe",
+    "es": "Espagnol",
+    "fr": "Français",
+    "de": "Allemand",
+    "zh": "Chinois"
+  },
+  "upload": {
+    "title": "Importer des fichiers audio",
+    "description": "Dans Transcribe and Refine, les fichiers sont traités un par un et les résultats apparaissent dès qu'un fichier est terminé.",
+    "limitBadge": "Jusqu'à {maxSizeMb} Mo par requête",
+    "dropzoneTitle": "Déposez les fichiers audio ici ou cliquez pour parcourir",
+    "hint": "Formats pris en charge : {extensions}. Taille maximale par requête : {maxSizeMb} Mo."
+  },
+  "actions": {
+    "process": "Traiter les fichiers",
+    "removeFile": "Supprimer",
+    "clearHistory": "Effacer l'historique",
+    "confirmClearHistory": "Effacer l'historique de traitement enregistré ?"
+  },
+  "progress": {
+    "idleTitle": "En attente de fichiers",
+    "idleDescription": "Choisissez des fichiers puis lancez le traitement quand vous êtes prêt.",
+    "processingSingle": "Traitement de {count} fichier...",
+    "processingMultiple": "Traitement de {count} fichiers...",
+    "details": "{processedCount} fichiers traités sur {totalFiles} • Moteur : {engine} • Langue audio : {language}"
+  },
+  "history": {
+    "title": "Résultats récents",
+    "description": "Les traitements terminés de Transcribe and Refine sont enregistrés dans l'historique du navigateur pour un accès rapide.",
+    "justNow": "à l'instant",
+    "processedAt": "Traité le",
+    "engine": "Moteur",
+    "audioLanguage": "Langue audio",
+    "success": "Traitement terminé avec succès",
+    "errorLabel": "Erreur de traitement",
+    "downloadTranscript": "Télécharger la transcription",
+    "downloadRefined": "Télécharger le texte affiné"
+  },
+  "errors": {
+    "generic": "Une erreur s'est produite pendant le traitement de la requête.",
+    "connection": "Impossible de joindre le serveur. Vérifiez que l'application s'exécute sur http://localhost:5000.",
+    "invalid_engine": "Moteur non pris en charge : {engine}.",
+    "invalid_audio_language": "Langue audio non prise en charge : {language}.",
+    "whisper_unavailable": "Whisper n'est pas installé sur cette machine.",
+    "openai_not_configured": "OpenAI n'est pas configuré. Ajoutez OPENAI_API_KEY à votre fichier .env.",
+    "unsupported_format": "Format de fichier non pris en charge ({extension}). Formats autorisés : {allowed_extensions}.",
+    "transcription_failed": "Aucune parole n'a pu être transcrite à partir de ce fichier.",
+    "file_too_large": "Le fichier est trop volumineux. Taille maximale : {max_size_mb} Mo.",
+    "file_not_found": "Le fichier demandé est introuvable.",
+    "invalid_download_path": "Chemin de fichier invalide.",
+    "download_failed": "Le fichier n'a pas pu être téléchargé.",
+    "no_files_uploaded": "Aucun fichier n'a été importé.",
+    "no_files_selected": "Aucun fichier sélectionné."
+  },
+  "health": {
+    "badges": {
+      "ok": "Prêt",
+      "warning": "Limité",
+      "error": "Erreur"
+    },
+    "loading": "Vérification...",
+    "localReady": "Local sur cette machine",
+    "openaiConfigured": "OpenAI configuré",
+    "openaiMissing": "OpenAI non configuré",
+    "whisperAvailable": "Installé",
+    "whisperUnavailable": "Non installé",
+    "summary": {
+      "ready": "La transcription locale et le nettoyage cloud sont prêts à être utilisés.",
+      "openaiMissing": "La transcription locale est disponible, mais le nettoyage cloud est désactivé tant que OPENAI_API_KEY n'est pas configuré.",
+      "degraded": "L'application fonctionne, mais certaines capacités ne sont pas disponibles."
+    }
+  }
+}

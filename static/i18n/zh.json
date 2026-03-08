@@ -1,0 +1,119 @@
+{
+  "meta": {
+    "title": "Transcribe and Refine"
+  },
+  "hero": {
+    "eyebrow": "本地 speech-to-text 工作流",
+    "title": "使用 Transcribe and Refine 在本地转写并优化音频",
+    "subtitle": "Transcribe and Refine 通过 Vosk 或 Whisper 在你的机器上本地完成语音识别，并在需要时通过 OpenAI 清理转写文本。界面语言和音频语言可分别设置。",
+    "localBadge": "本地转写",
+    "cloudBadge": "云端优化"
+  },
+  "status": {
+    "title": "运行状态",
+    "description": "此面板显示在开始处理之前，Transcribe and Refine 当前可用的能力。",
+    "loading": "正在检查应用能力...",
+    "localLabel": "Speech-to-text",
+    "cloudLabel": "转写文本优化",
+    "whisperLabel": "Whisper 引擎"
+  },
+  "workflow": {
+    "title": "工作方式",
+    "description": "Transcribe and Refine 将本地语音识别与可选的云端文本清理结合在一起。",
+    "step1": "上传一个或多个受支持格式的音频文件。",
+    "step2": "所选的本地引擎会在当前机器上完成音频转写。",
+    "step3": "如有需要，可通过 OpenAI 清理转写结果，去除伪影和明显的识别噪声。",
+    "step4": "你可以下载原始转写文本和优化后的版本。"
+  },
+  "settings": {
+    "title": "处理设置",
+    "description": "选择 Transcribe and Refine 处理文件的方式。界面语言可在右上角菜单中切换。",
+    "uiLanguage": "界面语言",
+    "engine": "转写引擎",
+    "audioLanguage": "音频语言"
+  },
+  "engines": {
+    "vosk": {
+      "title": "Vosk",
+      "description": "使用离线语言模型进行快速本地识别。"
+    },
+    "whisper": {
+      "title": "Whisper",
+      "description": "本地识别质量更高，但通常比 Vosk 更慢。"
+    }
+  },
+  "languages": {
+    "en": "英语",
+    "ru": "俄语",
+    "es": "西班牙语",
+    "fr": "法语",
+    "de": "德语",
+    "zh": "中文"
+  },
+  "upload": {
+    "title": "上传音频文件",
+    "description": "在 Transcribe and Refine 中，文件会逐个处理，每个文件完成后会立即显示结果。",
+    "limitBadge": "每次请求最多 {maxSizeMb} MB",
+    "dropzoneTitle": "将音频文件拖到这里，或点击选择文件",
+    "hint": "支持格式：{extensions}。单次请求最大大小：{maxSizeMb} MB。"
+  },
+  "actions": {
+    "process": "处理文件",
+    "removeFile": "移除",
+    "clearHistory": "清除历史",
+    "confirmClearHistory": "要清除已保存的处理历史吗？"
+  },
+  "progress": {
+    "idleTitle": "等待文件",
+    "idleDescription": "选择文件后即可开始处理。",
+    "processingSingle": "正在处理 {count} 个文件...",
+    "processingMultiple": "正在处理 {count} 个文件...",
+    "details": "已处理 {processedCount}/{totalFiles} 个文件 • 引擎：{engine} • 音频语言：{language}"
+  },
+  "history": {
+    "title": "最近结果",
+    "description": "已完成的 Transcribe and Refine 任务会保存在浏览器历史中，方便快速访问。",
+    "justNow": "刚刚",
+    "processedAt": "处理时间",
+    "engine": "引擎",
+    "audioLanguage": "音频语言",
+    "success": "处理成功",
+    "errorLabel": "处理错误",
+    "downloadTranscript": "下载转写文本",
+    "downloadRefined": "下载优化文本"
+  },
+  "errors": {
+    "generic": "处理请求时发生错误。",
+    "connection": "无法连接到服务器。请确认应用正在 http://localhost:5000 上运行。",
+    "invalid_engine": "不支持的引擎：{engine}。",
+    "invalid_audio_language": "不支持的音频语言：{language}。",
+    "whisper_unavailable": "当前机器未安装 Whisper。",
+    "openai_not_configured": "尚未配置 OpenAI。请在 .env 文件中添加 OPENAI_API_KEY。",
+    "unsupported_format": "不支持的文件格式（{extension}）。允许的格式：{allowed_extensions}。",
+    "transcription_failed": "无法从该文件中识别出语音内容。",
+    "file_too_large": "文件过大。最大大小：{max_size_mb} MB。",
+    "file_not_found": "未找到请求的文件。",
+    "invalid_download_path": "无效的文件路径。",
+    "download_failed": "无法下载该文件。",
+    "no_files_uploaded": "未上传任何文件。",
+    "no_files_selected": "未选择任何文件。"
+  },
+  "health": {
+    "badges": {
+      "ok": "就绪",
+      "warning": "受限",
+      "error": "错误"
+    },
+    "loading": "检查中...",
+    "localReady": "本机本地运行",
+    "openaiConfigured": "OpenAI 已配置",
+    "openaiMissing": "OpenAI 未配置",
+    "whisperAvailable": "已安装",
+    "whisperUnavailable": "未安装",
+    "summary": {
+      "ready": "本地转写和云端文本优化都已可用。",
+      "openaiMissing": "本地转写可用，但在配置 OPENAI_API_KEY 之前，云端文本优化不可用。",
+      "degraded": "应用正在运行，但部分能力当前不可用。"
+    }
+  }
+}

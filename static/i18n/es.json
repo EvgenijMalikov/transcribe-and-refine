@@ -1,0 +1,119 @@
+{
+  "meta": {
+    "title": "Transcribe and Refine"
+  },
+  "hero": {
+    "eyebrow": "Flujo local de speech-to-text",
+    "title": "Transcribe and Refine tu audio de forma local",
+    "subtitle": "Transcribe and Refine ejecuta el reconocimiento de voz en tu propia máquina con Vosk o Whisper, y puede limpiar la transcripción con OpenAI cuando haga falta. El idioma de la interfaz y el idioma del audio se configuran por separado.",
+    "localBadge": "Transcripción local",
+    "cloudBadge": "Limpieza en la nube"
+  },
+  "status": {
+    "title": "Estado del entorno",
+    "description": "Este panel muestra qué partes del flujo de Transcribe and Refine están disponibles antes de empezar.",
+    "loading": "Comprobando capacidades de la aplicación...",
+    "localLabel": "Speech-to-text",
+    "cloudLabel": "Limpieza de la transcripción",
+    "whisperLabel": "Motor Whisper"
+  },
+  "workflow": {
+    "title": "Cómo funciona",
+    "description": "Transcribe and Refine combina reconocimiento de voz local con posprocesamiento opcional en la nube.",
+    "step1": "Sube uno o varios archivos de audio en un formato compatible.",
+    "step2": "El motor local seleccionado transcribe el audio en esta máquina.",
+    "step3": "La transcripción puede limpiarse con OpenAI para quitar artefactos y ruido evidente del reconocimiento.",
+    "step4": "Puedes descargar tanto la transcripción original como la versión refinada."
+  },
+  "settings": {
+    "title": "Configuración de procesamiento",
+    "description": "Elige cómo Transcribe and Refine debe procesar tus archivos. El idioma de la interfaz está en el menú superior derecho.",
+    "uiLanguage": "Idioma de la interfaz",
+    "engine": "Motor de transcripción",
+    "audioLanguage": "Idioma del audio"
+  },
+  "engines": {
+    "vosk": {
+      "title": "Vosk",
+      "description": "Reconocimiento local rápido con modelos offline específicos por idioma."
+    },
+    "whisper": {
+      "title": "Whisper",
+      "description": "Reconocimiento local de mayor calidad, normalmente más lento que Vosk."
+    }
+  },
+  "languages": {
+    "en": "Inglés",
+    "ru": "Ruso",
+    "es": "Español",
+    "fr": "Francés",
+    "de": "Alemán",
+    "zh": "Chino"
+  },
+  "upload": {
+    "title": "Subir archivos de audio",
+    "description": "En Transcribe and Refine los archivos se procesan uno por uno y los resultados aparecen en cuanto termina cada archivo.",
+    "limitBadge": "Hasta {maxSizeMb} MB por solicitud",
+    "dropzoneTitle": "Suelta archivos de audio aquí o haz clic para seleccionarlos",
+    "hint": "Formatos compatibles: {extensions}. Tamaño máximo por solicitud: {maxSizeMb} MB."
+  },
+  "actions": {
+    "process": "Procesar archivos",
+    "removeFile": "Eliminar",
+    "clearHistory": "Borrar historial",
+    "confirmClearHistory": "¿Borrar el historial guardado de procesamiento?"
+  },
+  "progress": {
+    "idleTitle": "Esperando archivos",
+    "idleDescription": "Selecciona archivos y empieza el procesamiento cuando quieras.",
+    "processingSingle": "Procesando {count} archivo...",
+    "processingMultiple": "Procesando {count} archivos...",
+    "details": "Procesados {processedCount} de {totalFiles} archivos • Motor: {engine} • Idioma del audio: {language}"
+  },
+  "history": {
+    "title": "Resultados recientes",
+    "description": "Los trabajos completados de Transcribe and Refine se guardan en el historial del navegador para un acceso rápido.",
+    "justNow": "ahora mismo",
+    "processedAt": "Procesado",
+    "engine": "Motor",
+    "audioLanguage": "Idioma del audio",
+    "success": "Procesado correctamente",
+    "errorLabel": "Error de procesamiento",
+    "downloadTranscript": "Descargar transcripción",
+    "downloadRefined": "Descargar texto refinado"
+  },
+  "errors": {
+    "generic": "Algo salió mal al procesar la solicitud.",
+    "connection": "No se pudo conectar con el servidor. Asegúrate de que la app esté ejecutándose en http://localhost:5000.",
+    "invalid_engine": "Motor no compatible: {engine}.",
+    "invalid_audio_language": "Idioma de audio no compatible: {language}.",
+    "whisper_unavailable": "Whisper no está instalado en esta máquina.",
+    "openai_not_configured": "OpenAI no está configurado. Añade OPENAI_API_KEY a tu archivo .env.",
+    "unsupported_format": "Formato de archivo no compatible ({extension}). Formatos permitidos: {allowed_extensions}.",
+    "transcription_failed": "No se pudo transcribir voz desde este archivo.",
+    "file_too_large": "El archivo es demasiado grande. Tamaño máximo: {max_size_mb} MB.",
+    "file_not_found": "No se encontró el archivo solicitado.",
+    "invalid_download_path": "Ruta de archivo no válida.",
+    "download_failed": "No se pudo descargar el archivo.",
+    "no_files_uploaded": "No se subieron archivos.",
+    "no_files_selected": "No se seleccionaron archivos."
+  },
+  "health": {
+    "badges": {
+      "ok": "Listo",
+      "warning": "Limitado",
+      "error": "Error"
+    },
+    "loading": "Comprobando...",
+    "localReady": "Local en esta máquina",
+    "openaiConfigured": "OpenAI configurado",
+    "openaiMissing": "OpenAI no configurado",
+    "whisperAvailable": "Instalado",
+    "whisperUnavailable": "No instalado",
+    "summary": {
+      "ready": "La transcripción local y la limpieza en la nube están listas para usarse.",
+      "openaiMissing": "La transcripción local está disponible, pero la limpieza en la nube está desactivada hasta configurar OPENAI_API_KEY.",
+      "degraded": "La aplicación está en ejecución, pero algunas capacidades no están disponibles."
+    }
+  }
+}
